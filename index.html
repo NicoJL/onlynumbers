@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Only numbers</title>
+	<script>
+		function onlyNumbers(event){
+			return validate(event,'12345');
+		}
+
+		function validate(e,val){
+			var key = window.event ? e.which :e .keyCode;
+			var chr = String.fromCharCode(key);		
+
+			if(val.indexOf(chr.toLowerCase()) == -1)
+				return false;
+			else
+				return true;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" onkeypress="return onlyNumbers(event);" id="txtNumber" />
+</body>
+</html>
