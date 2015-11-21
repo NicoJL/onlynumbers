@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<title>Only numbers</title>
 	<script>
-		function onlyNumbers(event){
-			return validate(event,'12345');
+		function onlyNumbers(e){
+			return validate(e,'0123456789');
 		}
 
 		function validate(e,val){
-			var key = window.event ? e.which :e .keyCode;
+			var key = window.Event ? e.which :e .keyCode;
 			var chr = String.fromCharCode(key);		
 
-			if(val.indexOf(chr.toLowerCase()) == -1)
+			if(val.indexOf(chr.toLowerCase()) == -1 && key != 8)
 				return false;
 			else
 				return true;
